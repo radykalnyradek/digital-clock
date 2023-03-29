@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  color: white;
+  font-family: sans-serif;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+
+  background: url(img/background.jpg) no-repeat center center / cover;
+}
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.clock {
+  display: flex;
+}
+
+.clock div {
+  margin: 5px;
+  position: relative;
+}
+
+.clock span {
+  width: 120px;
+  height: 100px;
+  background-color: #839bb7;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.clock .text {
+  height: 30px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: #436091;
+  opacity: 0.9;
+}
+
+.clock #ampm {
+  bottom: 0;
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  font-size: 20px;
+  background: green;
+}
+
+@media (max-width: 576px) {
+  .clock {
+    display: grid;
+    grid-template-areas: "h m s" "ap ap ap";
+  }
+
+  .clock .g-hours {
+    grid-area: h;
+  }
+
+  .clock .m-hours {
+    grid-area: m;
+  }
+
+  .clock .s-hours {
+    grid-area: s;
+  }
+
+  .clock span {
+    width: 100px;
+  }
+
+  .clock .ampm {
+    grid-area: ap;
+    display: flex;
+    justify-self: center;
+  }
+
+  .clock #ampm {
+    position: relative;
+  }
+}
